@@ -138,3 +138,23 @@ table td:last-child {
   padding: 0;
   border-bottom: none;
 }
+
+@media screen and (max-width: 1200px) {
+  main {
+    width: 90%;
+  }
+
+  table td {
+    font-size: 1.2em;
+  }
+
+  table th {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #input {
+    width: 50%;
+  }
+}
