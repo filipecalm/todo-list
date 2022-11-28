@@ -1,13 +1,10 @@
 
 'use strict'
 
-const listElement = document.getElementById('tarefa')
-
 const inputElement = document.getElementById("input");
 const salvar = document.getElementById('salvar')
 const edit = document.querySelector('#tableTarefa>tbody')
 const delete_Tarefa = document.getElementById('delete-tarefa')
-
 
 
 // CRUD
@@ -16,34 +13,25 @@ const setLocalStorage = (listaTarefas) => localStorage.setItem("listaTarefas", J
 
 
 const createTarefa = () => {
-  const listaTarefas = getLocalStorage()
-  const tarefa = inputElement.value;
-  listaTarefas.push(tarefa)
-  inputElement.value = '';
-  setLocalStorage(listaTarefas)
-  updateTable()
+
+  if (inputElement.value.length < 3) {
+    alert("Sua tarefa precisa ter pelo menos 3 letras!");
+  } else {
+    const listaTarefas = getLocalStorage()
+    const tarefa = inputElement.value;
+    listaTarefas.push(tarefa)
+    inputElement.value = '';
+    setLocalStorage(listaTarefas)
+    updateTable()
+  }
 }
 
 const readTarefa = () => getLocalStorage()
-
-const updateTarefa = (index, tarefa) => {
-  const listaTarefas = readTarefa()
-  listaTarefas[index] = tarefa
-  setLocalStorage(listaTarefas)
-}
 
 const deleteTarefa = (index) => {
   const listaTarefas = readTarefa()
   listaTarefas.splice(index, 1)
   setLocalStorage(listaTarefas)
-}
-
-// INTERAÇÂO COM LAYOUT
-
-const isValidFields = () => {
-  tarefa.setAttribute("required", "required")
-
-  return document.getElementById('form').reportValidity()
 }
 
 // INTERAÇÃO COM O LAYOUT
@@ -83,7 +71,7 @@ const editDelete = (event) => {
       editTarefa(index)
     } else {
       const tarefa = readTarefa()[index]
-      const response = confirm(`Deseja realmente excluir a tarefa: ${tarefa}?`)
+      const response = confirm(`Deseja realmente excluir a tarefa: "${tarefa}"?`)
       if (response) {
         deleteTarefa(index)
         updateTable()
