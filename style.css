@@ -1,0 +1,140 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  vertical-align: baseline;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+:root {
+  --primary-color: rgba(44, 44, 204, 0.607);
+  --secondary-color: #8c66e7;
+  --main-color: rgb(237, 243, 243);
+  --shadow-color: #CCC;
+  --text-color: white;
+  --btn-color: rgb(9, 118, 251);
+  --btn-green: rgb(55, 221, 4);
+  --btn-red: #FF4949;
+}
+
+body {
+  font-size: 100%;
+  list-style-type: none;
+  line-height: 1;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+header {
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  box-shadow: 0 1px 2px #CCC;
+  margin-bottom: 5rem;
+}
+
+#header-title {
+  color: var(--shadow-color);
+  text-transform: uppercase;
+}
+
+main {
+  background-color: var(--main-color);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  margin: 5vh auto;
+  padding: 20px;
+  box-shadow: 2px 2px 10px;
+  gap: 20px;
+}
+
+#salvar,
+button {
+  border-style: none;
+  height: 45px;
+  padding: 4px 8px;
+  background-color: var(--btn-color);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: box-shadow .4s ease;
+  border-radius: 4px;
+}
+
+.btn:active {
+  transform: translate(0, .1rem);
+  box-shadow: none;
+}
+
+.button.red {
+  width: 100%;
+  background-color: var(--btn-red);
+  align-content: center;
+}
+
+.button.red:hover {
+  background-color: red;
+  border: 1px solid black;
+  box-shadow: inset 200px 0 0 #f30d0df9;
+}
+
+#input {
+  height: 50%;
+  width: 40%;
+  background-color: var(--main-color);
+  color: rgb(4, 4, 4);
+  padding: 20px;
+  font-size: 1.2rem;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  -webkit-user-select: none;
+  user-select: none;
+  text-align: left;
+}
+
+table th {
+  height: 50px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  font-size: 2rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+table th:last-child {
+  width: 2%;
+}
+
+table td {
+  height: 50px;
+  color: black;
+  font-weight: 900;
+  font-size: 1.5em;
+  padding-left: 1.2rem;
+  border-bottom: 1px solid var(--primary-color);
+  box-shadow: inset black;
+}
+
+table td:last-child {
+  padding: 0;
+  border-bottom: none;
+}
