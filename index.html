@@ -1,39 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de tarefas - JavaScript</title>
+  <title>Lista de Tarefas Moderna</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1 id="header-title">todo list</h1>
-    <input id="input" type="text" data-index="new" placeholder="Digite uma tarefa" required/>
-    <button id="salvar" type="button" class="btn">Salvar</button>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-check-circle"></i> Lista de Tarefas</h1>
+      <div class="input-container">
+        <input id="input" type="text" placeholder="Adicione uma nova tarefa..." required/>
+        <select id="priority">
+          <option value="low">Baixa Prioridade</option>
+          <option value="medium">Média Prioridade</option>
+          <option value="high">Alta Prioridade</option>
+        </select>
+        <button id="saveTask" type="button" class="btn">
+          <i class="fas fa-plus"></i> Adicionar
+        </button>
+      </div>
+    </header>
 
-  </header>
-  <main id="app">
+    <main id="app">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="high">Alta Prioridade</button>
+        <button class="filter-btn" data-filter="medium">Média Prioridade</button>
+        <button class="filter-btn" data-filter="low">Baixa Prioridade</button>
+      </div>
 
-    <table id="tableTarefa">
-      <thead>
-        <tr> 
-          <th>Tarefa</th>
-          <th>Ação</th>
-        </tr>
-      <tbody>
-        <!-- AQUI SERÃO INCLUÍDAS AS TAREFAS -->
-      </tbody>
-    </thead>
-  </table>
+      <div class="tasks-container">
+        <table id="tableTask">
+          <thead>
+            <tr> 
+              <th>Status</th>
+              <th>Tarefa</th>
+              <th>Prioridade</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Tasks -->
+          </tbody>
+        </table>
+      </div>
 
-    <ul>
-      
-    </ul>
-
-  </main>
-
+      <div class="stats">
+        <span id="total-tasks">0 tarefas</span>
+        <span id="completed-tasks">0 concluídas</span>
+      </div>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
