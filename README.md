@@ -4,6 +4,13 @@ Este projeto é uma aplicação web simples de lista de tarefas, também conheci
 
 ![To-Do List Application](https://user-images.githubusercontent.com/103292859/204194481-58b0a0e7-ce72-4344-bef4-59280293d158.jpeg)
 
+### Deploy:
+<div style="display: inline_block">
+  <a href="https://todo-list-filipecalm.netlify.app/" target="_blank" rel="noopener noreferrer">
+    <img align="center" alt="netlify" src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
+  </a>
+</div>
+
 ## Funcionalidades
 
 Nesta aplicação, você pode:
